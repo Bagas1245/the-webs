@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu - Dengan JavaScript</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body class="layout">
+  <aside id="sidebar" class="sidebar">
+    <div class="row" style="justify-content:space-between;align-items:center;margin-bottom:8px">
+      <div class="brand">
+        <span class="text-hide">MyApp</span>
+      </div>
+      <button id="toggleBtn" class="menu-toggle" aria-label="Toggle sidebar" title="Toggle sidebar">≡</button>
+    </div>
+  
+    <!-- Hapus search-wrap dari sini jika sebelumnya berada di sidebar -->
+    <ul id="menuList" class="nav">
+      <li><a href="#" data-key="dashboard"><span class="label-hide">Dashboard</span></a></li>
+      <li><a href="#" data-key="profil"><span class="label-hide">Profil</span></a></li>
+      <li>
+        <button class="submenu-toggle" id="reportsToggle" aria-expanded="true">
+          <span>📁</span><span class="text-hide">Laporan</span>
+        </button>
+        <ul id="reportsSub" class="submenu">
+          <li><a href="#" data-key="lap-harian"><span class="label-hide">Harian</span></a></li>
+          <li><a href="#" data-key="lap-mingguan"><span class="label-hide">Mingguan</span></a></li>
+          <li><a href="#" data-key="lap-bulanan"><span class="label-hide">Bulanan</span></a></li>
+        </ul>
+      </li>
+      <li><a href="#" data-key="pengaturan"><span class="label-hide">Pengaturan</span></a></li>
+      <li><a href="#" data-key="bantuan"><span class="label-hide">Bantuan</span></a></li>
+      <li><a href="TugasP13b_input_BagasMishbahuddin.html" data-key="kontak"><span class="label-hide">Kontak</span></a></li>
+    </ul>
+  </aside>
+  
+  <main class="main">
+    <!-- Pencarian sekarang berada di dalam main -->
+    <div class="search-wrap">
+      <input id="menuSearch" class="search-input" type="search" placeholder="Cari nama...">
+    </div>
+  
+    <!-- Hasil pencarian muncul tepat di bawah input -->
+    <ul id="searchResults" aria-label="Hasil pencarian nama"></ul>
+  
+    <div class="card">
+      <h2 style="margin-top:0">Menu (Dengan JavaScript)</h2>
+      <p>Fitur: toggle sidebar, pencarian menu, submenu collapsible, link aktif tersimpan, dan navigasi keyboard.</p>
+      <div id="content" style="margin-top:10px;color:#374151">Silakan pilih menu.</div>
+    </div>
+  </main>
+
+  <script src="script/script_dash.js"></script>
+</body>
+</html>
