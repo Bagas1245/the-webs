@@ -33,6 +33,7 @@
       <li><a href="#" data-key="pengaturan"><span class="label-hide">Pengaturan</span></a></li>
       <li><a href="#" data-key="bantuan"><span class="label-hide">Bantuan</span></a></li>
       <li><a href="index1.html" data-key="kontak"><span class="label-hide">Kontak</span></a></li>
+      <li><a href="#" id="btn-tambah-siswa"><span class="label-hide">Tambah Data Siswa</span></a></li>
     </ul>
   </aside>
   
@@ -51,10 +52,32 @@
       <div id="content" style="margin-top:10px;color:#374151">Silakan pilih menu.</div>
     </div>
   </main>
-
+<div id="modal-tambah-siswa" class="modal-siswa">
+    <div class="modal-content-siswa">
+      <span class="close-siswa" id="close-modal-siswa">&times;</span>
+      <h2>Tambah Data Siswa</h2>
+      <form id="form-siswa">
+        <div class="form-group">
+          <label for="input-nama">Nama Siswa:</label>
+          <input id="input-nama" type="text" name="nama" required autocomplete="off" />
+        </div>
+        <div class="form-group">
+          <label for="input-nis">NIS:</label>
+          <input id="input-nis" type="text" name="nis" required autocomplete="off" />
+        </div>
+        <div class="form-group">
+          <label for="input-kelas">Kelas:</label>
+          <input id="input-kelas" type="text" name="kelas" required autocomplete="off" />
+        </div>
+        <button type="submit" class="btn-submit-siswa">Simpan</button>
+      </form>
+    </div>
+  </div>
   <script src="script/script_dash.js"></script>
+  <script src="script/tambah-siswa.js"></script>
 </body>
 
 </html>
+
 
 
