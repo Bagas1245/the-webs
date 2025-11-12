@@ -1,0 +1,91 @@
+/* Modal background */
+.modal-siswa {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(34, 55, 121, 0.24);
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.25s;
+}
+
+/* Modal box */
+.modal-content-siswa {
+  background: #fff;
+  margin: auto;
+  padding: 28px 24px 20px 24px;
+  border-radius: 12px;
+  max-width: 390px;
+  min-width: 300px;
+  box-shadow: 0 4px 24px 0 rgba(36, 42, 70, 0.13);
+  position: relative;
+  animation: modalFadeIn 0.25s;
+}
+
+/* Close (x) */
+.close-siswa {
+  color: #678;
+  position: absolute;
+  top: 11px;
+  right: 17px;
+  font-size: 26px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color .15s;
+}
+.close-siswa:hover { color: #112266; }
+
+@keyframes modalFadeIn {
+  from { transform: translateY(30px); opacity: 0;}
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Form styles */
+#form-siswa .form-group {
+  margin-bottom: 18px;
+}
+
+#form-siswa label {
+  font-size: 14.5px;
+  color: #314267;
+  margin-bottom: 5px;
+  display: block;
+}
+
+#form-siswa input[type="text"] {
+  width: 100%; padding: 8px 10px;
+  border: 1px solid #bbc5da;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 15px;
+  transition: border 0.15s;
+}
+#form-siswa input[type="text"]:focus {
+  outline: none;
+  border: 1.5px solid #265ec7;
+}
+
+.btn-submit-siswa {
+  margin-top: 8px;
+  background: #4063e2;
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  padding: 9px 17px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.2s;
+}
+.btn-submit-siswa:hover {
+  background: #203a86;
+}
+
+@media (max-width:420px) {
+  .modal-content-siswa { max-width: 98vw; }
+}
