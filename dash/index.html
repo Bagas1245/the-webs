@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/tambah-siswa.css">
+</head>
+<body class="layout">
+  <aside id="sidebar" class="sidebar">
+    <div class="row" style="justify-content:space-between;align-items:center;margin-bottom:8px">
+      <div class="brand">
+        <span class="text-hide">MyApp</span>
+      </div>
+      <button id="toggleBtn" class="menu-toggle" aria-label="Toggle sidebar" title="Toggle sidebar">≡</button>
+    </div>
+  
+    <!-- Hapus search-wrap dari sini jika sebelumnya berada di sidebar -->
+    <ul id="menuList" class="nav">
+      <li><a href="#" data-key="dashboard"><span class="label-hide">Dashboard</span></a></li>
+      <li><a href="#" data-key="profil"><span class="label-hide">Profil</span></a></li>
+      <li>
+        <button class="submenu-toggle" id="reportsToggle" aria-expanded="true">
+          <span>📁</span><span class="text-hide">Laporan</span>
+        </button>
+        <ul id="reportsSub" class="submenu">
+          <li><a href="#" data-key="lap-harian"><span class="label-hide">Harian</span></a></li>
+          <li><a href="#" data-key="lap-mingguan"><span class="label-hide">Mingguan</span></a></li>
+          <li><a href="#" data-key="lap-bulanan"><span class="label-hide">Bulanan</span></a></li>
+        </ul>
+      </li>
+      <li><a href="#" data-key="pengaturan"><span class="label-hide">Pengaturan</span></a></li>
+      <li><a href="#" data-key="bantuan"><span class="label-hide">Bantuan</span></a></li>
+      <li><a href="index1.html" data-key="kontak"><span class="label-hide">Kontak</span></a></li>
+      <li><a href="#" id="btn-tambah-siswa"><span class="label-hide">Tambah Data Siswa</span></a></li>
+    </ul>
+  </aside>  
+  <main class="main">
+    <!-- Pencarian sekarang berada di dalam main -->
+    <div class="search-wrap">
+      <input id="menuSearch" class="search-input" type="search" placeholder="Cari nama...">
+    </div>
+  
+    <!-- Hasil pencarian muncul tepat di bawah input -->
+    <ul id="searchResults" aria-label="Hasil pencarian nama"></ul>
+  
+    <div class="card">
+      <h2 style="margin-top:0">Menu</h2>
+      <p>Fitur: toggle sidebar, pencarian menu, submenu collapsible, link aktif tersimpan, dan navigasi keyboard.</p>
+      <div id="content" style="margin-top:10px;color:#374151">Silakan pilih menu.</div>
+    </div>
+  </main>
+
+  <div id="modal-tambah-siswa" class="modal-siswa">
+    <div class="modal-content-siswa">
+      <span class="close-siswa" id="close-modal-siswa">&times;</span>
+      <h2>Tambah Data Siswa</h2>
+      <form id="form-siswa">
+        <div class="form-group">
+          <label for="input-nama">Nama Siswa:</label>
+          <input id="input-nama" type="text" name="nama" required autocomplete="off" />
+        </div>
+        <div class="form-group">
+          <label for="input-nis">NIS:</label>
+          <input id="input-nis" type="text" name="nis" required autocomplete="off" />
+        </div>
+        <div class="form-group">
+          <label for="input-kelas">Kelas:</label>
+          <input id="input-kelas" type="text" name="kelas" required autocomplete="off" />
+        </div>
+        <div class="form-group">
+          <label for="input-gender">Jenis Kelamin</label>
+          <select id="input-gender" name="gender">
+            <option value="">-</option>
+            <option value="L">Laki-laki</option>
+            <option value="P">Perempuan</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-submit-siswa">Simpan</button>
+      </form>
+    </div>
+  </div>
+  <script src="script/script_dash.js"></script>
+  <script src="script/tambah-siswa.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manajemen Data Siswa</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style/students.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Manajemen Data Siswa</h1>
+
+    <section class="card">
+      <h2>Tambah / Ubah Data Siswa</h2>
+      <form id="studentForm">
+        <div class="grid">
+          <label>NIS/NIM
+            <input type="text" id="id" placeholder="-" maxlength="8" required oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+
+          </label>
+
+          <label>Nama Lengkap
+            <input type="text" id="name" placeholder="-" maxlength="8" required />
+          </label>
+
+          <label>Kelas
+            <select id="class" required>
+              <option value="">Pilih Kelas</option>
+              <optgroup>
+                <option value="X-1">X-1</option>
+                <option value="X-2">X-2</option>
+                <option value="X-3">X-3</option>
+                <option value="X-4">X-4</option>
+                <option value="X-5">X-5</option>
+                <option value="XI-1">XI-1</option>
+                <option value="XI-2">XI-2</option>
+                <option value="XI-3">XI-3</option>
+                <option value="XI-4">XI-4</option>
+                <option value="XI-5">XI-5</option>
+                <option value="XII-1">XII-1</option>
+                <option value="XII-2">XII-2</option>
+                <option value="XII-3">XII-3</option>
+                <option value="XII-4">XII-4</option>
+                <option value="XII-5">XII-5</option>
+              </optgroup>
+            </select>
+          </label>
+
+
+          <label>Email
+            <input type="email" id="email" placeholder="-" />
+          </label>
+
+          <label>Tanggal Lahir
+            <input type="date" id="dob" />
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit" id="saveBtn" class="btn-primary">Simpan</button>
+          <button type="button" id="resetBtn" class="btn-secondary">Reset</button>
+        </div>
+
+        <input type="hidden" id="editingIndex" />
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="listHeader">
+  <h2 style="margin:0">
+    Daftar Siswa 
+    <span id="infoCount" class="muted" style="font-size:14px"></span>
+  </h2>
+
+  <input type="search" id="search" placeholder="Cari nama / NIS / kelas…" />
+</div>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:120px">NIS/NIM</th>
+            <th>Nama</th>
+            <th style="width:140px">Kelas</th>
+            <th>Email</th>
+            <th style="width:130px">Tgl Lahir</th>
+            <th style="width:140px">Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <tr><td colspan="6" class="empty">Belum ada data</td></tr>
+        </tbody>
+      </table>
+
+<div id="deletePopup" class="popup-overlay">
+  <div class="popup-box">
+    <h3>Hapus Data?</h3>
+    <p id="popupText">Anda yakin ingin menghapus data ini?</p>
+
+    <div class="popup-actions">
+      <button id="cancelDelete" class="btn-secondary">Batal</button>
+      <button id="confirmDelete" class="btn-danger">Hapus</button>
+    </div>
+  </div>
+</div>
+
+
+      <p class="muted" style="margin-top:8px">Data tersimpan di browser (localStorage).</p>
+    </section>
+  </div>
+
+  <script src="script/students.js"></script>
+</body>
+</html>
